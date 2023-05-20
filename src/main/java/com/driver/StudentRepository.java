@@ -56,9 +56,7 @@ public class StudentRepository {
     }
 
     public Map<String,List<String>> getStudentsByTeacherName(){
-      /*  List<String>students=new ArrayList<>();
-        if(teacherStudentDb.containsKey(name))
-        students=teacherStudentDb.get(name);*/
+
         return teacherStudentDb;
     }
 
