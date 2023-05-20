@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class StudentService {
@@ -44,8 +45,11 @@ public class StudentService {
     }
 
     public List<String> getStudentsByTeacherName(String teacher){
-        List<String>students=studentRepository.getStudentsByTeacherName(teacher);
-        return students;
+        Map<String,List<String>> students=studentRepository.getStudentsByTeacherName();
+        List<String>ans=new ArrayList<>();
+        if(students.containsKey(teacher))
+            ans=students.get(teacher);
+        return ans;
     }
 
     public List<String> getAllStudents(){

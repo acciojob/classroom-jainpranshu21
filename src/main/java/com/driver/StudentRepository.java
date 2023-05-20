@@ -55,11 +55,11 @@ public class StudentRepository {
         return teachers;
     }
 
-    public List<String> getStudentsByTeacherName(String name){
-        List<String>students=new ArrayList<>();
+    public Map<String,List<String>> getStudentsByTeacherName(){
+      /*  List<String>students=new ArrayList<>();
         if(teacherStudentDb.containsKey(name))
-        students=teacherStudentDb.get(name);
-        return students;
+        students=teacherStudentDb.get(name);*/
+        return teacherStudentDb;
     }
 
     public String deleteTeacherByName(String teacher){
