@@ -30,12 +30,8 @@ public class StudentRepository {
        if(!teacherStudentDb.containsKey(teacher))
            teacherStudentDb.put(teacher,new ArrayList<>());
        List<String>name=new ArrayList<>();
-       for(String name1:teacherStudentDb.keySet()){
-           if(name1.equals(teacher)){
-               name=teacherStudentDb.get(name1);
-               name.add(student);
-           }
-       }
+       name=teacherStudentDb.get(teacher);
+       name.add(student);
        teacherStudentDb.put(teacher,name);
        return "New student-teacher pair added successfully";
     }

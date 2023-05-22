@@ -47,8 +47,10 @@ public class StudentService {
     public List<String> getStudentsByTeacherName(String teacher){
         Map<String,List<String>> students=studentRepository.getStudentsByTeacherName();
         List<String>ans=new ArrayList<>();
-        if(students.containsKey(teacher))
-            ans=students.get(teacher);
+        for(String s:students.keySet()) {
+            if (s.equals(teacher))
+                ans = students.get(teacher);
+        }
         return ans;
     }
 
